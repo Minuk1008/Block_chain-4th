@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>211101</title>
+</head>
+<body>
+    <div id="result"></div>
+    <!-- c
+        bcd
+       abcde
+    
+         c
+        bcd
+       abcde
+        bcd
+         c-->
+        <script>
+            const array = ['a','b','c','d','e'] //a b c d e
+            let row = Math.floor(array.length/2);
+            for(var i = 0; i <= row; i++){
+                console.log(array.slice(row-i, row+i+1).join(""));
+            }
+
+
+            // for(var i=0; i<4; i++){
+            //     document.write( i + "<br>");
+            // }
+        </script>
+</body>
+</html>

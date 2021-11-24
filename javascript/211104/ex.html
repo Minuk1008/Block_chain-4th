@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>과제8</title>
+</head>
+<body>
+    <div id="result">별찍기</div>
+    <script>
+        function Function1(){
+            for (var star = 0; star <= 10; star += 1) {
+            console.log('*'.repeat(star + 1))
+            }
+        }
+        function Function2(){
+            for (var star = 10; star >= 1; star -= 1) {
+                console.log('*'.repeat(star))
+            }
+        }
+        function Function3(){
+            let n = 10
+            while (n >= -10) {
+                console.log(' '.repeat(Math.abs(n) / 2) + '*'.repeat(11 - Math.abs(n)))
+                n -= 2
+            }
+        }        
+    </script>
+</body>
+</html>

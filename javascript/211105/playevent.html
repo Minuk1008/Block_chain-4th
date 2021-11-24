@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Press Play</p>
+
+    <video controls onplay="myFunction()">
+        <source src="./mov_bbb.mp4" type="video/mp4">
+        <source src="mov_bbb.ogg" type="video/ogg">
+        Your browser is not support HTML5 videos.
+    </video>
+
+    <p>Video courtesy of <a href="https://www.bigbuckbunny.org/" target="_blank">Big Buck Bunny</a>.</p>
+    <p id="result"></p>
+
+    <script>
+        function myFunction() {
+            // alert("The video has been started to play");
+            document.getElementById("result").innerHTML = "The video has been started to play";
+        }
+    </script>
+</body>
+</html>

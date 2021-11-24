@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>달력 과제</title>
+</head>
+<body>
+    <!-- web browser console에 달력 출력
+    - makeCalender(year, month) 함수를 구현하여 console에 출력
+    - Date()함수 사용, concole.log()를 사용.
+    - 출력은 아래와 같다.
+        xxxx년, xx월
+        일 월 화 수 목 금 토
+        요일들 + 4주차 
+     - 스크립트 사이에 -->
+    <h1>달력 과제</h1>
+    <!-- script
+    function makeCalendar(year, month)
+    {
+    console.log(2021년 5월);
+    console.log(array);
+    }
+    makeCalendar(2021,5);
+    makeCalendar(2021,3);
+    /script
+-->
+    <script>
+        var array = []
+
+        function makeCalender(year,month){
+            console.log(year+"년"+month+"월");
+            console.log("일 월 화 수 목 금 토");
+            console.log(array);
+        //     while(i < 10)
+        // {
+        //     if(i%2==0){
+        //         text +="<br>The number is helloworld";
+        //     }
+        //     else {
+        //         text +="<br>The number is "+ i;
+        //     }
+        //     i++;
+        // }
+        }
+            
+        makeCalender(2021,5);
+        makeCalender(2021,3);
+    </script>
+</body>
+</html>

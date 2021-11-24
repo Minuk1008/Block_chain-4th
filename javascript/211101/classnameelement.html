@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Finding HTML Element by Class Name.</p>
+    <p class="intro">Hello World!!</p>
+    <p class="intro">This example demonstrates the <b>getElementsByClassName</b> method</p>
+    <p id="result"></p>
+
+    <script>
+        const x = document.getElementsByClassName("intro");
+        document.getElementById("result").innerHTML = 
+        "The first paragraph (index 1) with class = \intro is : " + x[1].innerHTML;
+    </script>
+</body>
+</html>

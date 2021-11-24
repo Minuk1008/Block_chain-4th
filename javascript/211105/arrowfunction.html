@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="result"></p>
+
+    <script>
+        var hello;
+
+        // 맨 위가 제일 베스트 (애매모호하게 코드 짜지 말기)
+        // hello = () => {
+        //     return "Hello World !!"
+        // }
+
+
+        // hello = () => "Hello World !!";
+
+        // hello = (val) => "Hello " + val;
+
+        hello = val => "Hello " + val;
+
+        // document.getElementById("result").innerHTML = hello();
+        document.getElementById("result").innerHTML = hello("World!!");
+    </script>
+</body>
+</html>

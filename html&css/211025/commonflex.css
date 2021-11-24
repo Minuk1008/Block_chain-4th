@@ -1,0 +1,16 @@
+.flex-container{
+    display: flex;
+    height: 300px;
+    align-items: baseline;
+    background-color: dodgerblue;
+}
+
+.flex-container > div {
+    background-color: lightgray;
+    width: 100px;
+    margin: 10px;
+    line-height: 75px;
+    padding: 20px;
+    font-size: 30px;
+    text-align: center;
+}

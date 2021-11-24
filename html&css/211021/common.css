@@ -1,0 +1,105 @@
+input[type=text] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0px;
+    box-sizing: border-box;
+    background-color: gray;
+}
+
+input[type=number] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0px;
+    box-sizing: border-box;
+    background-color: lightpink
+}
+
+#parag {
+    text-align: center;
+    background-color: yellow;
+    color: black;
+}
+
+.aright {
+    text-align: right; 
+    background-color: blue;
+    color: white;
+}
+
+.header {
+    text-align: center;
+    background-color: rgb(58, 15, 114);
+    color: rgb(242, 245, 237);
+}
+
+p.header {
+    background-color: blue;
+}
+
+.p1 {
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.p2 {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.p3 {
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.normal {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 40px;
+}
+
+.italic {
+    font-style: italic;
+    font-weight: bold;
+    font-size: 60px;
+}
+
+.oblique {
+    font-style: oblique;
+    font-weight: 1000 ;
+    font-size: 80px;
+}
+
+a:link {
+    color: red;
+
+}
+
+a:visited {
+    color : green
+}
+
+a:hover{
+    color: hotpink;
+}
+
+a:active{
+    color: blue;
+}
+
+#rgbid {
+    background-color: rgb(255, 99, 71);
+}
+
+#hexid{
+    background-color:#ff6347 ;
+}
+
+#hslid{
+    background-color: hsl(9,100%,64%);
+}
+
+#rgbaid{
+    background-color: rgba(255,99,71,0.3);
+}
+
+#hslaid{
+    background-color: hsla(9,100%,64%,0.5);
+}
+

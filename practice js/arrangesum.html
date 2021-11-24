@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var li = ['a','b','c','d','e'];
+        // li.push('f');  // 하나 추가
+        // li = li.concat('f','g'); // 두개 추가 (li 재설정 필요)
+        // li.unshift('z'); //앞쪽에 하나 추가
+        li.splice(1,1,'x','y'); // 1번부터(b부터) 1개를 지우고 xy를 집어넣는다.
+        document.write(li);
+    </script>
+</body>
+</html>

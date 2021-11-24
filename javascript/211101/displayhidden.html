@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #myDiv {
+            width: 500px;
+            height: 500px;
+            background-color: blue;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <button onclick="myFunction()">Hidden</button><br>
+    <button onclick="funShow()">Show</button>
+    <div id="myDiv">This is my Div element.</div>
+    <div>박 수석은 이날 오전 TBS 라디오 '김어준의 뉴스공장' 인터뷰에서 관련 질문을 받고 "그러면 교황님께서 하지도 않은 말씀을 청와대가 브리핑했다는 것인가. 참 이해 안 되는 일"이라고 말했다.
+        
+    </div>
+
+    <script>
+        function myFunction() {
+            document.getElementById("myDiv").style.display = "none";
+        }
+
+        function funShow() {
+            document.getElementById("myDiv").style.display = "block";
+        }
+    </script>
+</body>
+</html>

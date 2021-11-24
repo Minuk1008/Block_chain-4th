@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fibonacci sequence</title>
+</head>
+<body>
+    <h1>Fibonacci sequence</h1>
+    <div id="result"></div>
+    <script>
+        function fibonacci(number) {
+            let result = [0, 1]
+            if (number === 0) {
+                console.log([0])
+            }
+            if (number === 1) {
+                console.log([0, 1])
+            }
+            for (let i = 2; i <= number; i++){
+                result.push(result[i - 2] + result[i - 1]);
+                console.log(result)
+            }
+            return result; 
+        }
+        document.getElementById("result").innerHTML = fibonacci(1) + "<br>";
+        document.getElementById("result").innerHTML += fibonacci(2) + "<br>";
+        document.getElementById("result").innerHTML += fibonacci(3) + "<br>";
+        document.getElementById("result").innerHTML += fibonacci(4) + "<br>";
+        document.getElementById("result").innerHTML += fibonacci(5) + "<br>";
+        document.getElementById("result").innerHTML += fibonacci(6) + "<br>";
+        document.getElementById("result").innerHTML += fibonacci(7) + "<br>";
+        document.getElementById("result").innerHTML += fibonacci(8) + "<br>";
+        document.getElementById("result").innerHTML += fibonacci(9) + "<br>";
+        document.getElementById("result").innerHTML += fibonacci(10) + "<br>";
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="result"></div>
+    <script>
+        function Person(first, last, age, eye) {
+            this.firstName = first;
+            this.lastName = last;
+            this.age = age;
+            this.eyeColor = eye;
+            this.fullname = function(){
+                return this.firstName + " " + this.lastName;
+            }
+        }
+
+        const mySon = new Person("John", "Doe", "12", "gray");
+        mySon.nationality = "Korean"
+        document.getElementById("result").innerHTML=
+         "My Son is " //+ mySon.age + ".";
+         //+ mySon.nationality + ".";
+         + mySon.fullname() + ".";
+    </script>
+</body>
+</html>

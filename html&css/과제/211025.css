@@ -1,0 +1,16 @@
+div{
+    width: 100px;
+    height: 100px;
+    background-color: yellow;
+    animation-name: 애니메이션과제;
+    animation-duration: 5s;
+    animation-iteration-count: 3;
+}
+
+@keyframes 애니메이션과제{
+    0%    {background-color: yellow;transform: translate(0,0);}
+    25%   {background-color: red;   transform: translate(150px,0);}
+    50%   {background-color: blue;  transform: translate(150px,150px);}
+    75%   {background-color: green; transform: translate(0,150px);}
+    100%  {background-color: yellow; transform: translate(0,0);}
+}

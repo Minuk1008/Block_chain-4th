@@ -1,0 +1,14 @@
+#main {
+    border: 10px solid red;
+    text-align: center;
+}
+
+.bgimg {
+    border: 0px;
+    padding: 0px;
+    background-image: url("./num.jpg");
+    opacity: 0.5;
+    min-height: 100%;
+    background-position: center;
+    background-size: cover;
+}

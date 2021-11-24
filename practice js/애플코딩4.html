@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./애플코딩4.css">
+</head>
+<body>
+    <div id="result" class="alert-box">아이디를 입력해주세요</div>
+    <button onclick="myFunction1()">Click</button>
+    <button onclick="myFunction2()">Click2</button>
+
+    <script>
+        //먼저 아이디 부터
+        function myFunction1() {
+            document.getElementById("result").style.display = "block";
+        }
+
+        //비밀번호 입력하세요인데 음.. 일단 저 문자를 바꿔야 하면서 버튼을 눌렸을때 바뀌어야해
+        function myFunction2() {
+            document.getElementById("result").innerHTML = "비밀번호를 입력해주세요";
+        }
+    </script>
+</body>
+</html>
