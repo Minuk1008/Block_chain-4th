@@ -1,0 +1,13 @@
+doctype html 
+html(lang = 'ko')
+    head
+        title = "Hello Pug"
+        style 
+            include pug.css 
+    body   
+        h1 hello h1
+        p.greetings#people Hello World
+        div.container.column.main#division 
+            | To insert multiline text,
+            br
+            | You can use the pipe operator.
