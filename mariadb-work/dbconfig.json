@@ -1,0 +1,7 @@
+{
+    "host" : "localhost",
+    "user" : "root",
+    "password": "wlehdlf1",
+    "database": "nodepot",
+    "connectionLimit" : 100
+}
