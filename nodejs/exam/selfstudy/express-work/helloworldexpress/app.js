@@ -12,7 +12,7 @@ var urlencodedParser = bodyParser.urlencoded({extended : false}); //url body-par
 app.use(express.static(`${__dirname}/public`));
 
 app.get('/', function(req, res){
-    res.sendFile(__dirname + "/html/" + "index.html");
+    res.sendFile(__dirname + "/public/html/" + "index.html");
 });
 
 app.get('/process_get', function(req, res){

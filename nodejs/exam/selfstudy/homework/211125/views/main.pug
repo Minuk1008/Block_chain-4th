@@ -14,21 +14,22 @@ html(lang="ko")
                 input(name = "password" type = "password" require placeholder = "Password")
                 br
                 script 
-                    function execPostCode() {
-                       - daum.postcode.load(function() {
-                           - new daum.Postcode({
+                    - function execPostCode() {
+                        daum.postcode.load(function() {
+                            new daum.Postcode({
                                 oncomplete: function(data) {
-                                    - var addr = '';
+                                    var addr = '';
                                     if(data.userSelectedType === 'R') {
                                         addr = data.roadAddress;
                                     } else {
                                         addr = data.jibunAddress;
                                     }
                                 }
-                                - document.getElementById('userZipcode').value = data.zonecode;
-                                - document.getElementById('userAddress').value = addr;
-                                - document.getElementById('userAddress').focus();
+                                document.getElementById('userZipcode').value = data.zonecode;
+                                document.getElementById('userAddress').value = addr;
+                                document.getElementById('userAddress').focus();
                             })
-                        }).open();
+                        }).open() 
                     }
                 button(type = "submit") Sign Up *^^*
+    script
