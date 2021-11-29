@@ -56,7 +56,9 @@ app.post('/signup', (req, res) => {
 });
 
 app.get('/protected_page', (req, res) => {
-    res.render("protected_page");
+    res.render("protected_page"), {
+        message: "Protected_page"
+    }
 });
 
 app.listen(port, host, () => {
