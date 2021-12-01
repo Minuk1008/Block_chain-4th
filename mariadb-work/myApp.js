@@ -30,7 +30,7 @@ con.connect(function(err){
     con.query(sQuery, (err, result, fields)=>{
         if(err) throw err;
 
-        console.log(fields);
+        console.log(result);
     });
 });
 

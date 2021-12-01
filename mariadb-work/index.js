@@ -1,6 +1,5 @@
-// const { config } = require("dotenv");
 const express = require("express");
-const mysql = require("mysql");
+const mysql = require("./dbcon");
 const path = require("path");
 
 // const getDbConnection = require('./dbcon');
