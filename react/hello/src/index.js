@@ -7,6 +7,7 @@ import Gundam from './Gundam';
 import Archangel from './Archangel';
 import Headercomp from './Headercomp';
 import Container from './Container';
+import Child from './Container';
 import reportWebVitals from './reportWebVitals';
 
 // class Gundam extends React.Component { //건담(상위값)을 컴포넌트(하위값)에 상속해줌 
@@ -34,7 +35,7 @@ import reportWebVitals from './reportWebVitals';
 // );
 ReactDOM.render(
   <React.StrictMode>
-    <Container />
+    <Child />
   </React.StrictMode>,
   document.getElementById('header')
 );
