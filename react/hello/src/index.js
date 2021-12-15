@@ -3,24 +3,51 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import Car from './Car';
+import Gundam from './Gundam';
+import Archangel from './Archangel';
+import Headercomp from './Headercomp';
+import Container from './Container';
 import reportWebVitals from './reportWebVitals';
 
+// class Gundam extends React.Component { //건담(상위값)을 컴포넌트(하위값)에 상속해줌 
+//   constructor(props) { //props가 property
+//       super(props);
+//   }
+
+//   render() {
+//       return <h1>This Gundam is {this.props.model} !</h1>
+//   }
+// }
+// 여기 index에서도 사용 가능하지만 실제로 개발할때는 사용 안하는게 좋음. 워낙 코드가 길어져서
+
+// ReactDOM.render(
+//   <React.StrictMode>
+//     <Gundam cargo="Archangle"/>
+//   </React.StrictMode>,
+//   document.getElementById('root')
+// );
+// ReactDOM.render(
+//   <React.StrictMode>
+//     <Headercomp newTitle = "new title !"/>
+//   </React.StrictMode>,
+//   document.getElementById('header')
+// );
 ReactDOM.render(
   <React.StrictMode>
-    <Car />
+    <Container />
   </React.StrictMode>,
-  document.getElementById('root')
+  document.getElementById('header')
 );
 
-class HelloMessage extends React.Component {
-  render() {
-    return (
-      <div>
-        Hello {this.props.name}
-      </div>
-    );
-  }
-}
+// class HelloMessage extends React.Component {
+//   render() {
+//     return (
+//       <div>
+//         Hello {this.props.name}
+//       </div>
+//     );
+//   }
+// }
 
 // const myelement = (
 //   <table>

@@ -1,14 +1,15 @@
-function Car(props) {
-    return <h2>This is my {props.color} car!!!</h2>
+import React from 'react'
+
+class Car extends React.Component {
+    constructor() {
+        super();
+        this.state = {color : "red"};
+    }
+
+    render() {
+        // return <h1>This is my {this.state.color} Car !</h1>; //state 라는 속성값에서 color를 가져오는 방식
+        return <h1>This is my {this.props.color} Car !</h1>; 
+    }
 }
 
-function Garage() {
-    return (
-        <>
-            <h1>My Garage in the wich cart !!</h1>
-            <Car />
-        </>
-    )
-}
-
-export default Garage;
+export default Car;
