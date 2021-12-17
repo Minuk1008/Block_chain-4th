@@ -3,12 +3,20 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import Car from './Car';
-import Gundam from './Gundam';
-import Archangel from './Archangel';
+// import Gundam from './Gundam';
+import Gundam from './Gundam1';
+// import Archangel from './Archangel';
+import Archangel from './Archangel copy';
+// import Archangel from './Gundam copy';
 import Headercomp from './Headercomp';
 import Container from './Container';
 import Child from './Container';
+import Football from './Football';
+import Goal from './Goal';
+import Fate from './Fate';
 import reportWebVitals from './reportWebVitals';
+
+const characters = ['Siro', 'Saber', 'Archer', 'Tosaka Lyn', 'Verserker']
 
 // class Gundam extends React.Component { //건담(상위값)을 컴포넌트(하위값)에 상속해줌 
 //   constructor(props) { //props가 property
@@ -33,11 +41,17 @@ import reportWebVitals from './reportWebVitals';
 //   </React.StrictMode>,
 //   document.getElementById('header')
 // );
+// ReactDOM.render(
+//   <React.StrictMode>
+//     <Goal isGoal = {false}/>
+//   </React.StrictMode>,
+//   document.getElementById('root')
+// );
 ReactDOM.render(
   <React.StrictMode>
-    <Child />
+    <Archangel />
   </React.StrictMode>,
-  document.getElementById('header')
+  document.getElementById('root')
 );
 
 // class HelloMessage extends React.Component {
