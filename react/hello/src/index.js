@@ -14,7 +14,10 @@ import Child from './Container';
 import Football from './Football';
 import Goal from './Goal';
 import Fate from './Fate';
-import reportWebVitals from './reportWebVitals';
+import Gundamform from './GundamForm';
+import Hordform from './Hordform';
+import Wow from './Wow';
+// import reportWebVitals from './reportWebVitals';
 
 const characters = ['Siro', 'Saber', 'Archer', 'Tosaka Lyn', 'Verserker']
 
@@ -47,9 +50,15 @@ const characters = ['Siro', 'Saber', 'Archer', 'Tosaka Lyn', 'Verserker']
 //   </React.StrictMode>,
 //   document.getElementById('root')
 // );
+// ReactDOM.render(
+//   <React.StrictMode>
+//     <Fate characters ={characters} />
+//   </React.StrictMode>,
+//   document.getElementById('root')
+// );
 ReactDOM.render(
   <React.StrictMode>
-    <Archangel />
+    <App />
   </React.StrictMode>,
   document.getElementById('root')
 );
@@ -116,4 +125,4 @@ ReactDOM.render(
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+// reportWebVitals();

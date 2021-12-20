@@ -1,4 +1,6 @@
 import logo from './logo.svg';
+import Wow from './Wow';
+import Counter from './Counter';
 import './App.css';
 
 // function App() {
@@ -22,12 +24,19 @@ import './App.css';
 //   );
 // }
 
+// function App() {
+//   return (
+//     <div className='App'>
+//       <h1>Hello World!</h1>
+//     </div>
+//   );
+// };
 function App() {
   return (
-    <div className='App'>
-      <h1>Hello World!</h1>
+    <div>
+      <Wow />
     </div>
   );
-};
+}
 
 export default App;
