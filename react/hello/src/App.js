@@ -4,7 +4,10 @@ import logo from './logo.svg';
 // import Jsxtest from './Jsxtest';
 // import Jsxcss from './Jsxcss';
 import './App.css';
-import Block4 from './Block4';
+// import Block4 from './Block4';
+import Block4 from './Block4 copy';
+import Homework20 from './homework20';
+import Home from './pages/Home';
 
 // function App() {
 //   return (
@@ -40,7 +43,7 @@ function App() {
       <div>
         <img src={logo} className="App-logo" alt = "logo" />
       </div>
-      <Block4 />
+      <Homework20 />
     </div>
   );
 }
