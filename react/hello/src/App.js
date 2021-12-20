@@ -1,7 +1,10 @@
 import logo from './logo.svg';
-import Wow from './Wow';
-import Counter from './Counter';
+// import Wow from './Wow';
+// import Counter from './Counter';
+// import Jsxtest from './Jsxtest';
+// import Jsxcss from './Jsxcss';
 import './App.css';
+import Block4 from './Block4';
 
 // function App() {
 //   return (
@@ -34,7 +37,10 @@ import './App.css';
 function App() {
   return (
     <div>
-      <Wow />
+      <div>
+        <img src={logo} className="App-logo" alt = "logo" />
+      </div>
+      <Block4 />
     </div>
   );
 }
