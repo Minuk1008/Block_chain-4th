@@ -2,7 +2,7 @@ import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import Hlogin from "./pages/Hlogin"
-import Hcalc from "./pages/Hcalc"
+import Hcalc from "./Hcalc"
 import Hclass from "./pages/Hclass"
 import Hlayout from "./pages/Hlayout"
 import Hhome from "./pages/Hhome"

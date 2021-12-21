@@ -6,6 +6,7 @@ import logo from './logo.svg';
 import './App.css';
 // import Block4 from './Block4';
 import Block4 from './Block4 copy';
+import Homework20 from '../../homwork/12.20/homework20';
 import Home from './pages/Home';
 
 // function App() {
@@ -42,7 +43,7 @@ function App() {
       <div>
         <img src={logo} className="App-logo" alt = "logo" />
       </div>
-      <Block4 />
+      <Homework20 />
     </div>
   );
 }
