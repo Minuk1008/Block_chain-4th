@@ -28,17 +28,19 @@ const TodoHeadBlock = styled.div`
 `;
 
 function TodoHead() {
-    const todos = useTodoState();
+    const todos = useTodoState(); //useTodo 사전펼치고 todos를 사용? 한다는 그런 느낌
     const undoneTask = todos.filter(todo => !todo.done);
 
     const today = new Date();
-    const dateString = today.toLocaleDateString('ko-KR', {
+    const dateString = today.toLocaleDateString('ko-KR', 
+        {
         year: "numeric" ,
-        month: 'long',
+        month: 'numeric',
         day: "numeric"
-    });
+        }
+    );
     const dayName = today.toLocaleDateString('ko-KR', {weekday: 'long'});
-    // console.log(todos)
+    console.log(todos)
 
     return (
         <TodoHeadBlock>
