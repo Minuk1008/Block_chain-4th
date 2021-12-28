@@ -5,8 +5,8 @@ body {
   font-family: sans-serif;
 }
 .wrapper {
-  max-width: 420px;
-  min-height: 96vh;
+  max-width: 500px;
+  min-height: 65vh;
   margin: 0 auto;
 }
 
