@@ -1,0 +1,21 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "61fe4525-0883-4e47-aeeb-67b4bf6a0cfa": {
+      "ProjectGuid": "61fe4525-0883-4e47-aeeb-67b4bf6a0cfa",
+      "DisplayName": "youtube",
+      "ColorIndex": 0
+    },
+    "4cce3054-52e7-4d92-a890-4ecd469b6538": {
+      "ProjectGuid": "4cce3054-52e7-4d92-a890-4ecd469b6538",
+      "DisplayName": "class_5",
+      "ColorIndex": 1
+    },
+    "1328bdef-d9f6-4b16-bcef-f2999db07c83": {
+      "ProjectGuid": "1328bdef-d9f6-4b16-bcef-f2999db07c83",
+      "DisplayName": "class_6",
+      "ColorIndex": 2
+    }
+  },
+  "NextColorIndex": 3
+}
