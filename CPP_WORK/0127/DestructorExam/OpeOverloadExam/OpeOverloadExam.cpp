@@ -1,34 +1,33 @@
-﻿// BasicClassExam.cpp : 이 파일에는 'main' 함수가 포함됩니다. 거기서 프로그램 실행이 시작되고 종료됩니다.
+﻿// OpeOverloadExam.cpp : 이 파일에는 'main' 함수가 포함됩니다. 거기서 프로그램 실행이 시작되고 종료됩니다.
 //
 
 #include <iostream>
-#include <string>
-#include "Books.h"
-#include "Car.h"
+#include "Box.h"
 
 int main()
 {
-    CBooks booksObj;
-    booksObj.m_Title = "Learning C++ 21 days";
-    booksObj.m_Author = "SiEun Lee";
-    booksObj.m_Subject = "Learning C++ Programming";
-    booksObj.m_nBookId = 19980225;
-    booksObj.PrintBookInformation();
+    CBox box1;
+    CBox box2;
+    CBox box3;
+    double volume = 0.0f;
 
-    CBooks cppBook;
-    cppBook.m_Title = "Learning C++ in Hell";
-    cppBook.m_Author = "Hadfes";
-    cppBook.m_Subject = "Learning C++ Programming in Olympus";
-    cppBook.m_nBookId = 20210225;
-    cppBook.PrintBookInformation();
+    box1.SetLength(6.5);
+    box1.SetBreadth(7.0);
+    box1.SetHeight(5.0);
 
-    CCar carObj;
-    carObj.m_strCompany = "BMW";
-    carObj.m_strCarName = "BMW X5";
-    carObj.m_strCarNo = "NY 3456";
-    carObj.PrintCarInfomation();
+    box2.SetLength(12.5);
+    box2.SetBreadth(13.0);
+    box2.SetHeight(10.25);
 
-    cout << carObj.CarSpeed(220) << endl;
+    volume = box1.GetVolume();
+    cout << "Volume of box1 : " << volume << endl;
+
+    volume = box2.GetVolume();
+    cout << "Volume of box2 : " << volume << endl;
+
+    box3 = box1 + box2;
+    cout << "Volume of box3 : " << volume << endl;
+
 
     return 0;
 }

@@ -1,36 +1,43 @@
-﻿// BasicClassExam.cpp : 이 파일에는 'main' 함수가 포함됩니다. 거기서 프로그램 실행이 시작되고 종료됩니다.
+﻿// VerySimpleThrowExam.cpp : 이 파일에는 'main' 함수가 포함됩니다. 거기서 프로그램 실행이 시작되고 종료됩니다.
 //
 
 #include <iostream>
-#include <string>
-#include "Books.h"
-#include "Car.h"
+
+using namespace std;
+
+double division(int a, int b) {
+    if (b == 0) {
+        throw "Division by Zero !";
+    }
+
+    return (double)(a / b);
+}
 
 int main()
 {
-    CBooks booksObj;
-    booksObj.m_Title = "Learning C++ 21 days";
-    booksObj.m_Author = "SiEun Lee";
-    booksObj.m_Subject = "Learning C++ Programming";
-    booksObj.m_nBookId = 19980225;
-    booksObj.PrintBookInformation();
+    int x = 50;
+    int y = 0;
+    double z = 0.0f;
 
-    CBooks cppBook;
-    cppBook.m_Title = "Learning C++ in Hell";
-    cppBook.m_Author = "Hadfes";
-    cppBook.m_Subject = "Learning C++ Programming in Olympus";
-    cppBook.m_nBookId = 20210225;
-    cppBook.PrintBookInformation();
-
-    CCar carObj;
-    carObj.m_strCompany = "BMW";
-    carObj.m_strCarName = "BMW X5";
-    carObj.m_strCarNo = "NY 3456";
-    carObj.PrintCarInfomation();
-
-    cout << carObj.CarSpeed(220) << endl;
-
-    return 0;
+    try {
+        //throw 128;
+        z = division(x, y);
+        std::cout << "divided value : " << z << endl;
+    }
+    //catch (int errCode) {
+    catch(const char* errMsg) {
+        //cout << "An exception occured. Exception Error code : " << errCode << endl;
+        cerr << errMsg << endl;
+    }
+    //try
+    //{
+    //    z = x / y;
+    //}
+    //catch (const std::exception& e)
+    //{
+    //    cout << e.what() << endl;
+    //}
+    //std::cout << "Hello World!\n";
 }
 
 // 프로그램 실행: <Ctrl+F5> 또는 [디버그] > [디버깅하지 않고 시작] 메뉴

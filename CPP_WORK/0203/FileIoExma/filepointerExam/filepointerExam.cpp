@@ -1,34 +1,28 @@
-﻿// BasicClassExam.cpp : 이 파일에는 'main' 함수가 포함됩니다. 거기서 프로그램 실행이 시작되고 종료됩니다.
+﻿// filepointerExam.cpp : 이 파일에는 'main' 함수가 포함됩니다. 거기서 프로그램 실행이 시작되고 종료됩니다.
 //
 
 #include <iostream>
-#include <string>
-#include "Books.h"
-#include "Car.h"
+#include <fstream>
+
+using namespace std;
+
+const char* fileName = "fileName.jpg";
 
 int main()
 {
-    CBooks booksObj;
-    booksObj.m_Title = "Learning C++ 21 days";
-    booksObj.m_Author = "SiEun Lee";
-    booksObj.m_Subject = "Learning C++ Programming";
-    booksObj.m_nBookId = 19980225;
-    booksObj.PrintBookInformation();
+    long lFirst, lEnd;
 
-    CBooks cppBook;
-    cppBook.m_Title = "Learning C++ in Hell";
-    cppBook.m_Author = "Hadfes";
-    cppBook.m_Subject = "Learning C++ Programming in Olympus";
-    cppBook.m_nBookId = 20210225;
-    cppBook.PrintBookInformation();
+    ifstream iFile;
+    iFile.open(fileName, ios::in | ios::binary);
+    lFirst = iFile.tellg();
+    iFile.seekg(0, ios::end);
+    lEnd = iFile.tellg();
+    iFile.close();
 
-    CCar carObj;
-    carObj.m_strCompany = "BMW";
-    carObj.m_strCarName = "BMW X5";
-    carObj.m_strCarNo = "NY 3456";
-    carObj.PrintCarInfomation();
+    cout << "file [" << fileName << "] size : " << (lEnd - lFirst) << endl;
 
-    cout << carObj.CarSpeed(220) << endl;
+
+    std::cout << "Hello World!\n";
 
     return 0;
 }
@@ -43,3 +37,4 @@ int main()
 //   4. [오류 목록] 창을 사용하여 오류를 봅니다.
 //   5. [프로젝트] > [새 항목 추가]로 이동하여 새 코드 파일을 만들거나, [프로젝트] > [기존 항목 추가]로 이동하여 기존 코드 파일을 프로젝트에 추가합니다.
 //   6. 나중에 이 프로젝트를 다시 열려면 [파일] > [열기] > [프로젝트]로 이동하고 .sln 파일을 선택합니다.
+

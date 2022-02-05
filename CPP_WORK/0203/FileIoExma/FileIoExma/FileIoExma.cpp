@@ -1,34 +1,44 @@
-﻿// BasicClassExam.cpp : 이 파일에는 'main' 함수가 포함됩니다. 거기서 프로그램 실행이 시작되고 종료됩니다.
+﻿// FileIoExma.cpp : 이 파일에는 'main' 함수가 포함됩니다. 거기서 프로그램 실행이 시작되고 종료됩니다.
 //
 
 #include <iostream>
+#include <fstream>
 #include <string>
-#include "Books.h"
-#include "Car.h"
+#include <sstream>
+
+using namespace std;
 
 int main()
 {
-    CBooks booksObj;
-    booksObj.m_Title = "Learning C++ 21 days";
-    booksObj.m_Author = "SiEun Lee";
-    booksObj.m_Subject = "Learning C++ Programming";
-    booksObj.m_nBookId = 19980225;
-    booksObj.PrintBookInformation();
+    char data[100];
 
-    CBooks cppBook;
-    cppBook.m_Title = "Learning C++ in Hell";
-    cppBook.m_Author = "Hadfes";
-    cppBook.m_Subject = "Learning C++ Programming in Olympus";
-    cppBook.m_nBookId = 20210225;
-    cppBook.PrintBookInformation();
+    ofstream outputFile;
+    outputFile.open("simplefile.data");
 
-    CCar carObj;
-    carObj.m_strCompany = "BMW";
-    carObj.m_strCarName = "BMW X5";
-    carObj.m_strCarNo = "NY 3456";
-    carObj.PrintCarInfomation();
+    std::cout << "Writing to the file " << endl;
+    cout << "Enter Your Name : "; 
+    cin.getline(data, 100);
+    outputFile << data << endl;
 
-    cout << carObj.CarSpeed(220) << endl;
+    cout << "Enter your age : ";
+    cin >> data;
+    cin.ignore();
+    outputFile << data << endl;
+
+    outputFile.close();
+
+    ifstream inputFile;
+    inputFile.open("simplefile.data");
+
+    cout << "Reading from the simplefile.data" << endl;
+    stringstream strStream;
+    //inputFile >> data;
+    //cout << data << endl;
+
+    strStream << inputFile.rdbuf();
+    cout << strStream.str();
+
+    inputFile.close();
 
     return 0;
 }

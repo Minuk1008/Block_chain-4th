@@ -13,4 +13,5 @@ public:
 	string m_strCarNo;
 
 	void PrintCarInfomation();
+	int CarSpeed(int CCar);
 };

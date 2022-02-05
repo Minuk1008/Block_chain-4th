@@ -1,34 +1,35 @@
-﻿// BasicClassExam.cpp : 이 파일에는 'main' 함수가 포함됩니다. 거기서 프로그램 실행이 시작되고 종료됩니다.
+﻿// SimpleCopyExam.cpp : 이 파일에는 'main' 함수가 포함됩니다. 거기서 프로그램 실행이 시작되고 종료됩니다.
 //
 
 #include <iostream>
-#include <string>
-#include "Books.h"
-#include "Car.h"
+#include <fstream>
+
+using namespace std;
 
 int main()
 {
-    CBooks booksObj;
-    booksObj.m_Title = "Learning C++ 21 days";
-    booksObj.m_Author = "SiEun Lee";
-    booksObj.m_Subject = "Learning C++ Programming";
-    booksObj.m_nBookId = 19980225;
-    booksObj.PrintBookInformation();
+    //미리 파일 크기 확인 후 한번에 읽어서 복사
+    ifstream in;
+    in.open("fileName.jpg", ios::in | ios::binary);
 
-    CBooks cppBook;
-    cppBook.m_Title = "Learning C++ in Hell";
-    cppBook.m_Author = "Hadfes";
-    cppBook.m_Subject = "Learning C++ Programming in Olympus";
-    cppBook.m_nBookId = 20210225;
-    cppBook.PrintBookInformation();
+    // 총 파일 사이즈
+    in.seekg(0, ios::end);
+    long fileLength = in.tellg();
+    cout << "Read file size : " << fileLength << " Byte" << endl;
 
-    CCar carObj;
-    carObj.m_strCompany = "BMW";
-    carObj.m_strCarName = "BMW X5";
-    carObj.m_strCarNo = "NY 3456";
-    carObj.PrintCarInfomation();
+    // loading total file size in memeory
+    in.seekg(0, ios::beg);
+    char* buf = new char[fileLength];
+    in.read(buf, fileLength);
+    in.close();
 
-    cout << carObj.CarSpeed(220) << endl;
+    // buffer to file
+    ofstream out;
+    out.open("fileName_copy.jpg", ios::out | ios::binary);
+    out.write(buf, fileLength);
+    out.close();
+
+    std::cout << "Hello World!\n";
 
     return 0;
 }

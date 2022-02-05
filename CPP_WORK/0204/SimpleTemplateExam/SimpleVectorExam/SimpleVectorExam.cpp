@@ -1,34 +1,32 @@
-﻿// BasicClassExam.cpp : 이 파일에는 'main' 함수가 포함됩니다. 거기서 프로그램 실행이 시작되고 종료됩니다.
+﻿// SimpleVectorExam.cpp : 이 파일에는 'main' 함수가 포함됩니다. 거기서 프로그램 실행이 시작되고 종료됩니다.
 //
 
 #include <iostream>
-#include <string>
-#include "Books.h"
-#include "Car.h"
+#include <vector>
+
+using namespace std;
 
 int main()
 {
-    CBooks booksObj;
-    booksObj.m_Title = "Learning C++ 21 days";
-    booksObj.m_Author = "SiEun Lee";
-    booksObj.m_Subject = "Learning C++ Programming";
-    booksObj.m_nBookId = 19980225;
-    booksObj.PrintBookInformation();
+    vector<int> vec;
 
-    CBooks cppBook;
-    cppBook.m_Title = "Learning C++ in Hell";
-    cppBook.m_Author = "Hadfes";
-    cppBook.m_Subject = "Learning C++ Programming in Olympus";
-    cppBook.m_nBookId = 20210225;
-    cppBook.PrintBookInformation();
+    vec.push_back(10);
+    vec.push_back(20);
+    vec.push_back(30);
+    vec.push_back(40);
 
-    CCar carObj;
-    carObj.m_strCompany = "BMW";
-    carObj.m_strCarName = "BMW X5";
-    carObj.m_strCarNo = "NY 3456";
-    carObj.PrintCarInfomation();
+    //for (vector<int>::size_type i = 0; i < vec.size(); i++) {
+    //    cout << "vec" << i << " : " << vec[i] << endl;
+    //}
 
-    cout << carObj.CarSpeed(220) << endl;
+    for (vector<int>::iterator itr = vec.begin(); itr != vec.end(); ++itr) { // iterator 를 사용할때는 항상 앞쪽에 ++를 표시해준다
+        cout << "vector itr : " << *itr << endl;
+    }
+
+    vector<int>::iterator itr = vec.begin() + 2;
+    cout << "Third element : " << *itr << endl; //iterator (반복자)를 사용할때는 반드시 포인터(*)를 사용한다
+
+    std::cout << "Hello World!\n";
 
     return 0;
 }

@@ -1,35 +1,38 @@
-﻿// BasicClassExam.cpp : 이 파일에는 'main' 함수가 포함됩니다. 거기서 프로그램 실행이 시작되고 종료됩니다.
+﻿// AccessSpecifierExam.cpp : 이 파일에는 'main' 함수가 포함됩니다. 거기서 프로그램 실행이 시작되고 종료됩니다.
 //
 
 #include <iostream>
-#include <string>
-#include "Books.h"
-#include "Car.h"
+
+using namespace std;
+
+class CBox {
+protected:
+    double m_width;
+};
+
+class CSmallBox : public CBox {
+public:
+    void SetSmallWidth(double width);
+    double GetSmallWidth();
+};
+
+void CSmallBox::SetSmallWidth(double width) {
+    m_width = width;
+}
+
+double CSmallBox::GetSmallWidth() {
+    return m_width;
+}
 
 int main()
 {
-    CBooks booksObj;
-    booksObj.m_Title = "Learning C++ 21 days";
-    booksObj.m_Author = "SiEun Lee";
-    booksObj.m_Subject = "Learning C++ Programming";
-    booksObj.m_nBookId = 19980225;
-    booksObj.PrintBookInformation();
+    CSmallBox* smallBox = new CSmallBox();
 
-    CBooks cppBook;
-    cppBook.m_Title = "Learning C++ in Hell";
-    cppBook.m_Author = "Hadfes";
-    cppBook.m_Subject = "Learning C++ Programming in Olympus";
-    cppBook.m_nBookId = 20210225;
-    cppBook.PrintBookInformation();
+    smallBox->SetSmallWidth(5.0);
 
-    CCar carObj;
-    carObj.m_strCompany = "BMW";
-    carObj.m_strCarName = "BMW X5";
-    carObj.m_strCarNo = "NY 3456";
-    carObj.PrintCarInfomation();
+    std::cout << "width of small box : " << smallBox->GetSmallWidth() << endl;
 
-    cout << carObj.CarSpeed(220) << endl;
-
+    delete smallBox;
     return 0;
 }
 

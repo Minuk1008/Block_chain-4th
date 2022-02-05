@@ -1,34 +1,38 @@
-﻿// BasicClassExam.cpp : 이 파일에는 'main' 함수가 포함됩니다. 거기서 프로그램 실행이 시작되고 종료됩니다.
+﻿// vector_itr_exam.cpp : 이 파일에는 'main' 함수가 포함됩니다. 거기서 프로그램 실행이 시작되고 종료됩니다.
 //
 
 #include <iostream>
-#include <string>
-#include "Books.h"
-#include "Car.h"
+#include <vector>
+
+using namespace std;
+
+template<typename T>
+void PrintVector(vector<T>& vc) {
+    for (typename vector<T>::iterator itr = vc.begin(); itr != vc.end(); ++itr) {
+        cout << *itr << endl;
+    }
+}
 
 int main()
 {
-    CBooks booksObj;
-    booksObj.m_Title = "Learning C++ 21 days";
-    booksObj.m_Author = "SiEun Lee";
-    booksObj.m_Subject = "Learning C++ Programming";
-    booksObj.m_nBookId = 19980225;
-    booksObj.PrintBookInformation();
+    vector<int> vec;
+    vec.push_back(1);
+    vec.push_back(2);
+    vec.push_back(3);
+    vec.push_back(4);
 
-    CBooks cppBook;
-    cppBook.m_Title = "Learning C++ in Hell";
-    cppBook.m_Author = "Hadfes";
-    cppBook.m_Subject = "Learning C++ Programming in Olympus";
-    cppBook.m_nBookId = 20210225;
-    cppBook.PrintBookInformation();
+    std::cout << "first vector state : " << endl;
+    PrintVector(vec);
+    cout << "=========================================" << endl;
 
-    CCar carObj;
-    carObj.m_strCompany = "BMW";
-    carObj.m_strCarName = "BMW X5";
-    carObj.m_strCarNo = "NY 3456";
-    carObj.PrintCarInfomation();
+    //insert before vec[2]
+    vec.insert(vec.begin() + 2, 55);
+    PrintVector(vec);
+    cout << "=========================================" << endl;
 
-    cout << carObj.CarSpeed(220) << endl;
+    //erase vec[3]
+    vec.erase(vec.begin() + 3);
+    PrintVector(vec);
 
     return 0;
 }
