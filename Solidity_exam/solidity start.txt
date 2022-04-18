@@ -1,0 +1,16 @@
+nvm install --lts
+nvm use --lts
+nvm ls
+(버전 최신 버전 빼고 nvm uninstall (version))
+node -v
+(버전 맞는지 최종확인)
+npm i -g truffle
+(truffle = smartcontract를 테스트 및 배포같은 기능을 쉽게 이용해줄 수 있는 툴)
+truffle version
+(Ganache는 자동적으로 최신 버전으로 update)
+npm install -g npm@8.6.0
+npm install -g ganache-cli
+npm audit fix
+ganache-cli
+(내 testnet 에서 사용 가능한 ETH 과 gas들 정보가 나옴)
+-------------
