@@ -1,0 +1,12 @@
+//
+1. 바닥에 닿았을때 gameover, 모든 블럭을 다 깼을 때 gameclear
+2. 패들에서 spacebar 를 누르면 무작위 위치로 볼이 출발
+3. react 로 fadein 구상(로딩화면 -> 게임화면)
+4. input 값에다가 column & row 입력창 만들어서 원하는 만큼 블록생성
+
+//
+1. ball 이 canvas.height 끝에 닿았을때 alert로 gameover 팝업 띄우기
+2. if 모든 블럭들이 false가 되면 gameclear
+3. 작업한 html+javascript를 react 로 변경
+4. react로 fadein 구글링
+5. 서버를 켜서 처음 '/' 을 랜더링 했을때 prompt 값을 줘서 column 값과 row 값을 받아서 코드에 적용시키기
