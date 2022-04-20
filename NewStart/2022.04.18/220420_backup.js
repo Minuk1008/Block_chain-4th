@@ -9,21 +9,19 @@ let arcPosY = canvas.height / 2;
 
 let arcMoveDirX = -1; // 왼쪽으로
 let arcMoveDirY = 1; //아래로
-let arcMoveSpd = 2;
+let arcMoveSpd = 1;
 
 let ball = {
     left:0, right:0, top:0, bottom:0
 };
 
 //벽돌
-const brickColumn = 1;
-const brickRow = 1;
+const brickColumn = 5;
+const brickRow = 4;
 const brickWidth = 50; // 간격 10
 const brickHeight = 25; //  간격 5
 
 let bricks = []; //갯수가 정해져있다면 new Array(갯수)
-
-let brickCount = brickRow * brickColumn;
 
 //패들
 const barWidth = 100;
@@ -90,6 +88,7 @@ function drawArc() {
 function drawBricks() {
     context.beginPath();
     for(let i = 0; i < brickRow; i ++) {
+        
         for(let j = 0; j < brickColumn; j++) {
             if(bricks[i][j].display == true) {
                 context.rect(bricks[i][j].left, bricks[i][j].top, brickWidth, brickHeight)
@@ -100,8 +99,6 @@ function drawBricks() {
     }
     context.closePath();
 }
-
-
 
 // 도형들 그리기
 function draw() {
@@ -142,43 +139,18 @@ function update() {
         arcPosY = paddle.top - arcRadius;
     }
 
-    //볼과 canvas높이 _ 충돌확인 (gameover)
-    if(iscollisionBallToEnd(ball, canvas)){
-        alert("gameover")
-
-        window.location.reload();
-    }
-
     //벽돌과 볼 _ 충돌확인
     for(i = 0; i < brickRow; i++) {
         for(j = 0; j < brickColumn; j++) {
             if(isCollisionRectToRect(ball, bricks[i][j])){
                 if(bricks[i][j].display == true){
-                    bricks[i][j].display = false;
+                    bricks[i][j].display = false
                     arcMoveDirY = 1;
-                    brickCount--;
                     break;
                 }
             }
         }
     }
-    gameWin();
-}
-
-// gameclear
-function gameWin() {
-    if(brickCount == 0) {
-        window.location.reload();
-
-        alert("gameclear");
-    }
-}
-
-// gameover
-function iscollisionBallToEnd(ball, end){
-    if(ball.bottom == end.height){
-        return true;
-    } return false;
 }
 
 function isCollisionRectToRect(rectA, rectB) {
