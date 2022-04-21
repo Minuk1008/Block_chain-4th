@@ -16,8 +16,8 @@ let ball = {
 };
 
 //벽돌
-const brickColumn = 1;
-const brickRow = 1;
+const brickColumn = 5;
+const brickRow = 4;
 const brickWidth = 50; // 간격 10
 const brickHeight = 25; //  간격 5
 
@@ -71,7 +71,7 @@ function drawRect() {
     context.rect(rectBarX, rectBarY, barWidth, barHeight); // /2 는 canvas 기준으로 가운데
     context.fillStyle = 'red';
     context.fill();
-
+    
     context.closePath(); //그리기 종료
 }
 
@@ -127,6 +127,8 @@ function update() {
     } else if(arcPosY + arcRadius > canvas.height){
         arcMoveDirY = -1;
     }
+    
+    
 
     arcPosX += arcMoveDirX * arcMoveSpd;
     arcPosY += arcMoveDirY * arcMoveSpd;
@@ -144,9 +146,9 @@ function update() {
 
     //볼과 canvas높이 _ 충돌확인 (gameover)
     if(iscollisionBallToEnd(ball, canvas)){
-        alert("gameover")
-
         window.location.reload();
+
+        alert("gameover")
     }
 
     //벽돌과 볼 _ 충돌확인
