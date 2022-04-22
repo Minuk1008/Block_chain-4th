@@ -159,12 +159,13 @@ function update() {
                     bricks[i][j].display = false;
                     arcMoveDirY = 1;
                     brickCount--;
+                    gameWin();
+                    
                     break;
                 }
             }
         }
     }
-    gameWin();
 }
 
 // gameclear
