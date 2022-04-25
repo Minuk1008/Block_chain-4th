@@ -27,22 +27,17 @@ class Brick {
 }
 
 class MovingBrick extends Brick {
-    constructor(left, top, right, bottom,color, speed) {
-        super(left, top,right,bottom,color)
-        this.speed = speed;
-    }
+    // constructor(left, top, right, bottom) {
+    //     this.left = left;
+    //     this.top = top;
+    //     this.right = right;
+    //     this.bottom = bottom;
+    // }
     // 코드 중복을 위해 상속을 받음
 
-    movingBrick(){
-        if(this.right > canvas.width) 
-        {
-            obsMoveDir = -1;
-        }
-        else if(this.left < 0)
-        {
-            obsMoveDir = 1;        
-        }
-        obsBrickX += obsMoveDir;
+    movingAction(){
+        this.left++;
+        console.log("내가 움직이고 있어")
     }
 }
 
@@ -57,15 +52,15 @@ let arcPosY = canvas.height / 2;
 
 let arcMoveDirX = -1; // 왼쪽으로
 let arcMoveDirY = 1; //아래로
-let arcMoveSpd = 2;
+let arcMoveSpd = 10;
 
 let ball = {
     left:0, right:0, top:0, bottom:0
 };
 
 //벽돌
-const brickColumn = 5;
-const brickRow = 4;
+const brickColumn = 1;
+const brickRow = 2;
 const brickWidth = 50; // 간격 10
 const brickHeight = 25; //  간격 5
 
@@ -189,7 +184,7 @@ function draw() {
 
 function update() {
     ballMove();
-    MovingBrick.autoMove();
+    autoMove();
     //데이터 수정 (도형의 위치 이동)
     ball.left = arcPosX - arcRadius;
     ball.right = arcPosX + arcRadius;
@@ -206,7 +201,6 @@ function update() {
     obstacle.top = obsBrickY;
     obstacle.bottom = obsBrickY + obsBrickHeight;
 
-    //볼과 장애물 _ 충돌확인
     if(iscollisionBallToObs(ball, obstacle)){
         arcMoveDirY = -1 *arcMoveDirY;
         arcMoveDirX = -1 *arcMoveDirX;
@@ -223,9 +217,9 @@ function update() {
 
     //볼과 canvas높이 _ 충돌확인 (gameover)
     if(iscollisionBallToEnd(ball, canvas)){
-        window.location.reload();
+        // window.location.reload();
 
-        alert("gameover")
+        // alert("gameover")
     }
 
     //벽돌과 볼 _ 충돌확인
@@ -236,26 +230,26 @@ function update() {
                     bricks[i][j].display = false;
                     arcMoveDirY = 1;
                     brickCount--;
+                    gameWin(2000);
                     break;
                 }
             }
         }
     }
-    gameWin();
 }
 
 // obstacle brick auto move
-// function autoMove() {
-//     if(obsBrickX + obsBrickWidth > canvas.width) 
-//     {
-//         obsMoveDir = -1;
-//     }
-//     else if(obsBrickX - obsBrickWidth < 0)
-//     {
-//         obsMoveDir = 1;        
-//     }
-//     obsBrickX += obsMoveDir;
-// }
+function autoMove() {
+    if(obsBrickX + obsBrickWidth > canvas.width) 
+    {
+        obsMoveDir = -1;
+    }
+    else if(obsBrickX - obsBrickWidth < 0)
+    {
+        obsMoveDir = 1;        
+    }
+    obsBrickX += obsMoveDir;
+}
 
 // ball auto move
 function ballMove() {
@@ -276,12 +270,15 @@ function ballMove() {
 }
 
 // gameclear
-function gameWin() {
+async function gameWin(timeout) {
     if(brickCount == 0) {
-        window.location.reload();
+        setTimeout(() => {
+            window.location.reload();
 
-        alert("gameclear");
+            alert("gameclear");
+        }, timeout)
     }
+    // else throw new Error("error");
 }
 
 // gameover
@@ -321,6 +318,7 @@ function setBricks() {
     for(let i = 0; i < brickRow; i ++) {
         bricks[i] = [];
         for(let j = 0; j < brickColumn; j++) {
+            // TODO : right : left + 50 해보기
             // bricks[i][j] = {
             //     left: 55 + j * (brickWidth + 10), 
             //     right: 55 + j * (brickWidth + 10) + 50, 
@@ -335,8 +333,6 @@ function setBricks() {
         }
     }
 }
-
-
 
 setBricks();
 setInterval(update, 10);
