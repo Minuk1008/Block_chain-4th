@@ -59,8 +59,8 @@ let ball = {
 };
 
 //벽돌
-const brickColumn = 1;
-const brickRow = 2;
+const brickColumn = 5;
+const brickRow = 4;
 const brickWidth = 50; // 간격 10
 const brickHeight = 25; //  간격 5
 
