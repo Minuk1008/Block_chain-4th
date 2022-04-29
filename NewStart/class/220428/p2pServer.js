@@ -61,6 +61,7 @@ const initMessageHandler = (ws) => {
 }
 
 const write = (ws, message) => {
+    console.log('write()' + message)
     ws.send(JSON.stringify(message));
 }
 

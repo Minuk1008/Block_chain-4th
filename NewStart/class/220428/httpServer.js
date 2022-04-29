@@ -36,7 +36,7 @@ const initHttpServer = (myHttpPort) => {
 
     app.post('/sendMessage', (req, res) => {
         console.log(req.body.data)
-        res.send(sendMessage(req.body.data));
+        sendMessage(req.body.data);
     })
 
     app.listen(myHttpPort, () => {
