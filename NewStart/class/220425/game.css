@@ -1,0 +1,38 @@
+#Canvas2 {
+    width : 407px;
+    height : 407px;
+    outline : auto; 
+    position: absolute;
+    right: 112px;
+    top: 209px;
+}
+
+#char {
+    background-color : transparent;
+    background: no-repeat;
+    /* opacity: 0.5; */
+    width: 407px;
+    height: 407px;
+}
+
+
+#rock {
+    position: absolute;
+    right: 306.5px;
+    top: 306px;
+    width: 100px;
+    height: 100px;
+}
+#sissors {
+    position: absolute;
+    right: 153.25px;
+    width: 100px;
+    height: 100px;
+}
+#paper {
+    position: absolute;
+    right: 0px;
+    top: 306px;
+    width: 100px;
+    height: 100px;
+}

@@ -8,22 +8,31 @@ const context = canvas.getContext('2d');
 const canvasState = document.getElementById('Canvas1');
 const context1 = canvasState.getContext('2d');
 
-let HP = "( ﾉ ﾟｰﾟ)ﾉ  " + "50";
-let GOLD = "( ﾉ ﾟｰﾟ)ﾉ  " + "100";
+hpcount = 50;
+goldCount = 100;
+
+let HP = `( ﾉ ﾟｰﾟ)ﾉ   ${hpcount}`;
+let GOLD = `( ﾉ ﾟｰﾟ)ﾉ   ${goldCount}`;
 
 context1.font = "30pt Fira";
-context1.strokeText("HP", 0, 40);
+context1.strokeText("HP", 10, 40);
 context1.font = "20px Gulim";
-context1.strokeText(HP, 0, 85);
+context1.strokeText(HP, 10, 85);
 context1.font = "30pt Fira";
-context1.strokeText("GOLD", 0, 135);
+context1.strokeText("GOLD", 10, 135);
 context1.font = "20px Gulim";
-context1.strokeText(GOLD, 0, 180);
+context1.strokeText(GOLD, 10, 180);
 
 
 // 가위바위보 게임 그리기
-const canvasGame = document.getElementById('Canvas2');
-const context2 = canvasGame.getContext('2d');
+// const canvasGame = document.getElementById('Canvas2');
+// const context2 = canvasGame.getContext('2d');
+
+var img = new Image(); 
+img.src = "./cool-man.gif";
+img.onload = function() {
+    context2.drawImage(img,100,10,200,200)
+}
 
 // 변수 선언==========================
 
@@ -181,18 +190,17 @@ function keyDownEventHandler(e) {
             userY += tileHeight + 1 
         }
     }
+
+    if(!bool) bool = true;
+    console.log(gameState)
 }
 
 // 게임 작동
 function rspGm() {
-    if(confirm("몬스터 출현 ! \n싸우시겠습니까 ?")) {
-        gameState = 2;
-    } else {
-        gameState = 0;
-    }
+    let monsterValue = Math.floor(Math.random() * 2);
+    let playerValue = input;
+
 }
-
-
 
 // 탈출구 충돌
 function gameclear(a, b) {
@@ -213,14 +221,14 @@ function meetMonster(a, b) {
         a.top == b.top &&
         a.bottom == b.bottom)
         {
-            // if()   \
-            gameState=1;
-            rspGm();
+            // if()
+            console.log('a')
             return true;
         } 
         return false;
 }
 
+let bool = true;
 // 종합 데이터 수정
 function update(){
     user.left = userX;
@@ -240,7 +248,15 @@ function update(){
         mon.bottom = monsters[i].bottom;
         
         if(meetMonster(user, mon)){
-            gameState = 0;
+            if(bool) {
+                gameState = 1;
+                if(!confirm("몬스터 출현 ! \n싸우시겠습니까 ?")) {
+                    gameState = 0;
+
+                    bool = false;
+                }
+                // document.
+            }
         }
     }
     
@@ -270,5 +286,9 @@ function draw() {
 setTiles();
 setMonster();
 setInterval(() => {
-    if(gameState == 0) {update()}}, 10);
-setInterval(draw, 10);
+    if(gameState == 0) {
+        update()
+        draw()
+    }}, 10);
+// setInterval(() => {
+//     if(gameState == 0) {draw()}}, 10);
