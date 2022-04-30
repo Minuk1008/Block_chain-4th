@@ -1,0 +1,47 @@
+.page {
+    width: 100vw;
+    height: 100vh;
+    background-color:lightgray;
+}
+
+.background {
+    width: 40%;
+    height: 100%;
+    background-color: #9bbbd4;
+    position:absolute;
+    left: 30%;
+}
+
+.chatinput {
+    position: absolute;
+    bottom: 0px;
+    border: none;
+    border-style: none;
+    border-width: 0px;
+    border-inline: 0px;
+    outline: none;
+    width: 99.4%;
+    height: 18%;
+}
+
+.sendmessage {
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    border: none;
+    border-style: none;
+    border-width: 0px;
+    border-inline: 0px;
+    outline: none;
+    width: 22%;
+    height: 18.3%;
+    background-color: #f1f01b;
+    color: black;
+}
+
+.convers {
+    background-color: coral;
+    width: 70%;
+    height: 6%;
+    color: #f1f01b;
+}
