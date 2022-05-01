@@ -3,7 +3,7 @@ import '../css/chat.css'
 
 function Chat() {
     const [msg, setMsg] = useState();
-    let contentMessage = '';
+    const [contentMessage, setContentMessage] = useState();
 
     const onChange = (e) => {
         console.log(e.target.value);
@@ -14,8 +14,7 @@ function Chat() {
     const onClick = (e) => {
         console.log("클릭");
 
-        contentMessage = msg;
-        console.log(contentMessage);
+        setContentMessage(msg);
 
         setMsg('');
     }
@@ -24,7 +23,7 @@ function Chat() {
         if(e.key == 'Enter'){
             console.log("엔터");
 
-            onclick();
+            onClick();
         }
     }
 
