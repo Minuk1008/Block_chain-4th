@@ -6,14 +6,12 @@ import bodyParser from 'body-parser';
 import fs from 'fs';
 
 import { createBlock, getBlocks } from './block.js';
-import { connectionToPeer, getPeer, sendMessage } from './p2pServer.js';
+import { connectionToPeer, getPeer, sendMessage, queryLatestMessage, queryAllMessage, responseLatestMessage, responseAllMessage } from './p2pServer.js';
 
 // 초기화 함수 
 const initHttpServer = (myHttpPort) => {
     const app = express();
     app.use(bodyParser.json());
-
-    const port = 6001;
 
     // app.use('view engine', 'ejs');
     // app.engine('html', require('ejs').renderFile);
@@ -41,13 +39,7 @@ const initHttpServer = (myHttpPort) => {
     })
 
     app.post('/addPeer', (req, res) => {
-        console.log(req.body)
-        const {ipAddress, port} = req.body;
-        console.log(ipAddress, port)
-
-        let fullAddress = "ws://" + ipAddress + ":" + port;
-        console.log(fullAddress)
-        // res.send(connectionToPeer(fullAddress));
+        res.send(connectionToPeer(req.body.data));
     })
 
     app.get('/getPeer', (req, res) => {
@@ -55,11 +47,12 @@ const initHttpServer = (myHttpPort) => {
     })
 
     app.post('/sendMessage', (req, res) => {
-        let data = {
-            "message" : req.body.msg,
-            "type" : parselnt(req.body.type)
-        }
-        sendMessage(data);
+        console.log(req.body.data)
+        res.send(sendMessage(req.body.data));
+    })
+
+    app.post('/queryLatestMessage', (req, res) => {
+        
     })
 
     app.listen(myHttpPort, () => {
