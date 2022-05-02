@@ -1,5 +1,6 @@
 import {React, useState} from "react";
-import '../css/chat.css'
+import '../css/chat.css';
+import $ from jQuery;
 
 function Chat() {
     const [msg, setMsg] = useState();
@@ -11,11 +12,12 @@ function Chat() {
         console.log(msg);
     }
     
-    const onClick = (e) => {
+    const onClick = () => {
         console.log("클릭");
 
         setContentMessage(msg);
 
+        onCreate();
         setMsg('');
     }
 
@@ -27,15 +29,25 @@ function Chat() {
         }
     }
 
+    const onCreate = () => {
+        let i = 1;
+        $(document).ready(function() {
+           $("button").click(function() {
+               $(".chatlist").append("<div className='convers'>"+ i +"</div>");
+               i++;
+           }) 
+        })
+    }
+
     return(
         <>
-        <div className="page">
-            <div className="background">
-                <input className="chatinput" onKeyDown={onKeyPress} onChange={onChange} value={msg}/>
-                <input type="button" className="sendmessage" value="전송" id="" onClick={onClick}/>
-                <div className="convers">{contentMessage}</div>
+            <div className="page">
+                <div className="chatlist">
+                    <input className="chatinput" onKeyDown={onKeyPress} onChange={onChange} value={msg}/>
+                    <input type="button" className="sendmessage" value="전송" id="" onClick={onClick}/>
+                    <div className="convers">{contentMessage}</div>
+                </div>
             </div>
-        </div>
         </>
     )
 }
