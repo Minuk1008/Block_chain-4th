@@ -7,8 +7,8 @@ const nunjucks = require('nunjucks');
 
 app.set('view engine', 'html');
 nunjucks.configure('views', {
-    express : app
-})
+    express : app 
+}) //이거 질문
 
 app.use(express.urlencoded({extended:true})) //req message를 해석해줌
 
@@ -19,6 +19,7 @@ app.use(router);
 //     res.send("Hello World")
 // }))
 // localhost:3000/a/b 해야 나옴
+// 이걸 응용해서 router.get( ~ 이부분을 컨트롤러에서 변함수로 지정 후 변수.함수 로 불러옴
 
 app.listen(port, (req,res) => {
     console.log(`server start at ${port}`)
