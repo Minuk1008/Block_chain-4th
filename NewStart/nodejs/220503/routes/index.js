@@ -1,8 +1,11 @@
-const express = require('express')
+const express = require('express');
 const router = express.Router();
+const boardRouter = require('./board')
+
+router.use('/board', boardRouter)
 
 router.get('/', (req,res) => {
-    res.send("Hello World")
+    res.render('index')
 })
 
-module.exports = router;
+module.exports = router
