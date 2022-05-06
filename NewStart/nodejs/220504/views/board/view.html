@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <input type="button" onclick="location.href='/board/update'" value="수정 하기 !"></input>
+    <input type="button" onclick="location.href='/board/list'" value="목록으로 가기 !"></input> -->
+
+    <h2>글보기 페이지 {{a}} {{name}}</h2>
+    <ul>
+        <li>
+            <label>제목</label>
+            제목입니다.
+        </li>
+        <li>
+            <label>작성일</label>
+            작성일입니다.
+        </li>
+        <li>
+            <label>조회수</label>
+            0
+        </li>
+        <li>
+            <label>내용</label>
+            내용입니다.
+        </li>
+    </ul>
+    <a href="/board/list">목록 가기</a>
+    <a href="/board/update?name={{name}}">수정 하기</a>
+    <a href="/board/delete">삭제 하기</a>
+</body>
+</html>
