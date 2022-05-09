@@ -4,9 +4,11 @@
 
 import { initHttpServer } from './httpServer.js'
 import { initP2PServer } from './p2pServer.js'
+import { initWallet } from './wallet.js'
 
-const httpPort = parseInt(process.env.HTTP_PORT) || 3002;
-const p2pPort = parseInt(process.env.P2P_PORT) || 6002;
+const httpPort = parseInt(process.env.HTTP_PORT) || 3001;
+const p2pPort = parseInt(process.env.P2P_PORT) || 6001;
 
+initWallet();
 initHttpServer(httpPort);
 initP2PServer(p2pPort);

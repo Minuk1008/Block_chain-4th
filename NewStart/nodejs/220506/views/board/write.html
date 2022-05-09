@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="/board/write" method="post" enctype="application/x-www-form-urlencoded">
+        <input type="text" name="subject" placeholder="제목을 입력하세요">
+        <input type="text" name="content" placeholder="내용을 입력하세요">
+        <input type="text" name="name" placeholder="이름을 입력하세요">
+
+        <input type="submit" value="작성완료">
+    </form>
+    <a href="/board/list">작성 취소</a>
+</body>
+</html>

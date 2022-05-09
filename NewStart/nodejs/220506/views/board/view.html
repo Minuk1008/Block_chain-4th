@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {% for view in views %}
+    <li>{{view.idx}}</li>
+    <li>{{view.subject}}</li>
+    <li>{{view.content}}</li>
+    <li>{{view.name}}</li>
+    <a href="/board/update?idx={{view.idx}}">수정하기</a>
+    <a href="/board/list">목록 가기</a>
+    {% endfor %}
+</body>
+</html>

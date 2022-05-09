@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {% for view in views %}
+    <form action="/board/update" method="post" enctype="application/x-www-form-urlencoded">
+        <input type="text" name="subject" placeholder="{{view.subject}}">
+        <input type="text" name="content" placeholder="{{view.content}}">
+        <input type="text" name="name" placeholder="{{view.name}}">
+        <input type="hidden" name="idx" value="{{view.idx}}">
+
+        <input type="submit" value="수정완료">
+    </form>
+    <a href="/board/list">목록으로</a>
+    {% endfor %}
+</body>
+</html>
